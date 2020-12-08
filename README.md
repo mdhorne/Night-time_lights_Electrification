@@ -28,50 +28,34 @@ Activate the new environment by executing:
 
 Then run the following lines to set up the environment and type 'y' for Yes if requested:
 
-	conda update --all
-	
-	conda config --prepend channels conda-forge
-	
-	conda install jupyter
-	
-	pip install earthengine-api --upgrade
-	
+	conda update --all	
+	conda install jupyter	
+	pip install earthengine-api --upgrade	
 	pip install geetools
 
 From https://www.lfd.uci.edu/~gohlke/pythonlibs/, download the following files (chose 32 or 64 bits):
 
-rasterio‑1.1.8‑cp37‑cp37m‑win_amd64.whl
-GDAL‑3.1.4‑cp37‑cp37m‑win_amd64.whl
-Shapely‑1.7.1‑cp37‑cp37m‑win_amd64.whl
-Fiona‑1.8.18‑cp37‑cp37m‑win_amd64.whl
-geopandas‑0.8.1‑py3‑none‑any.whl
-pyproj‑3.0.0.post1‑cp37‑cp37m‑win_amd64.whl
-Rtree‑0.9.4‑cp37‑cp37m‑win_amd64.whl
+	rasterio‑1.1.8‑cp37‑cp37m‑win_amd64.whl
+	GDAL‑3.1.4‑cp37‑cp37m‑win_amd64.whl
+	Shapely‑1.7.1‑cp37‑cp37m‑win_amd64.whl
+	Fiona‑1.8.18‑cp37‑cp37m‑win_amd64.whl
+	geopandas‑0.8.1‑py3‑none‑any.whl
+	pyproj‑3.0.0.post1‑cp37‑cp37m‑win_amd64.whl
+	Rtree‑0.9.4‑cp37‑cp37m‑win_amd64.whl
 
 Execute:
 
 	cd %userprofile%\Downloads
-	
 	pip install GDAL‑3.1.4‑cp37‑cp37m‑win_amd64.whl
-	
 	pip install rasterio‑1.1.8‑cp37‑cp37m‑win_amd64.whl
-	
 	pip install Shapely‑1.7.1‑cp37‑cp37m‑win_amd64.whl
-	
 	pip install Fiona‑1.8.18‑cp37‑cp37m‑win_amd64.whl
-	
 	pip install geopandas‑0.8.1‑py3‑none‑any.whl
-	
 	pip install pyproj‑3.0.0.post1‑cp37‑cp37m‑win_amd64.whl
-	
 	pip install Rtree‑0.9.4‑cp37‑cp37m‑win_amd64.whl
-
 	conda install git -y
-	
 	pip install git+https://github.com/wpgp/wpgpDownloadPy
-	
 	pip install hdx-python-api
-	
 	conda install matplotlib
 
 Close the command prompt. The environment is now ready to be used.
@@ -84,7 +68,6 @@ This will be the working directory and downloaded files and outputs will appear 
 Then run Jupyter Notebook by opening a command prompt (cmd) and typing:
 
 	conda activate geo37
-	
 	jupyter notebook
 
 This should open a new tab in your default browser.
