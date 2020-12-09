@@ -81,11 +81,14 @@ or close the Command prompt window, relaunch it and type the following commands 
 	conda activate geo37
 	jupyter notebook
 
-The folder contains 3 Jupyter Notebook files (.ipnyb) and one Python file for secondary functions (.py).
+The folder contains:
+1) A Jupyter Notebook file, Night-time_light_correction.ipnyb, containing the main program
+2) Two Python files, raster_manipulation.py and files_creation.py, for secondary functions
+3) Geometry files for Belgium as an example (gadm36_BEL_0)
 
-### 1-Google_Earth_Engine_processing
+### Night-time_light_correction
 
-Open 1-Google_Earth_Engine_processing.ipynb by clicking on it through the Jupyter interface.
+Open Night-time_light_correction.ipynb by clicking on it through the Jupyter interface.
 
 You can navigate through the code and execute selected cells with code by pressing 'shift + enter'.
 
@@ -94,26 +97,21 @@ If you never connected your Google account to Google Earth Engine, this should r
 Go on https://earthengine.google.com/signup/ to sign-up and rerun the code.
 Sign-in and copy the code displayed on the page, and paste it in the Jupyter Notebook, in the verification code box as explained.
 
-
-Running entirely 1-Google_Earth_Engine_processing should launch the processing of the raw NTL images,
+Running the first part of the program should launch the processing of the raw NTL images,
 which will be downloaded directly on your computer in the right folder (the working directory where you extracted Night-time_lights_Electrification-main.zip) if possible.
 You can chose the countries (through their 3 letters ISO code) and the years which will be processed.
 Folders will be automatically created in the working document.
-Geometries of certain countries are already available. If you want to create another specific area, enter the GPS coordinates as demonstrated in the code.
+Geometries of certain countries are already available. If you want to create another specific area, enter the GPS coordinates as demonstrated in the code or provide the path to an adequate file (shapefile, geopackage, json...).
 Resolution (in meters/pixel) can be changed, as well as aggregation method to combine monthly images.
 Large countries might require an additional step as their files are too big to be downloaded directly (>30 Mo).
 If so, the files will be transfered to your Google Drive account. You will find them under the folder called accordingly to the 3 letters ISO code.
 Download the files and extract them manually it the proper folder on your computer.
 
-### 2-Population_data_reprojection
-
-2-Population_data_reprojection downloads and reprojects population datasets (HRSL and WorldPop) that will be used later to correct the noisiness and level shifts of NTL images in time. By default HRSL data are downloaded from Humanitarian Data Exchange (https://data.humdata.org/) and WorldPop files from its organization website (https://www.worldpop.org/).
+The second part downloads and reprojects population datasets (HRSL and WorldPop) that will be used later to correct the noisiness and level shifts of NTL images in time. By default HRSL data are downloaded from Humanitarian Data Exchange (https://data.humdata.org/) and WorldPop files from its organization website (https://www.worldpop.org/).
 
 As WorldPop files' size is substantial, only the data of 2017 are downloaded and serve as the default population data to correct night-time lights data alongside HRSL.
 
-Night-time lights data are clipped accordingly to the global administrative areas found on https://gadm.org/. For this reason, the code only works for entire countries for now.
+Night-time lights data are clipped accordingly to the global administrative areas found on https://gadm.org/ for complete countries.
 
-### 3-NTL_inter-annual_correction
-
-3-NTL_inter-annual_correction corrects NTL images by withdrawing the average radiance value of uninhabited areas in the surroundings.
+Third part corrects NTL images by withdrawing the average radiance value of uninhabited areas in the surroundings.
 A visualization tool is suggested at the end to compare raw data and corrected ones.
